@@ -1,0 +1,41 @@
+plugins {
+    id 'org.springframework.boot' version '3.1.0'
+    id 'io.spring.dependency-management' version '1.1.3'
+    id 'java'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-json'
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    implementation 'org.springframework:spring-web'
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+    compileOnly("org.projectlombok:lombok:0.11.0")
+    // Python Integration
+    implementation 'org.python:jython-standalone:2.7.3'
+
+    // UI Libraries
+    implementation 'org.webjars:bootstrap:5.2.3'
+    implementation 'org.webjars:jquery:3.6.4'
+    implementation 'org.webjars:chartjs:3.9.1'
+    implementation 'org.webjars:font-awesome:6.2.1'
+
+    // Utilities
+    implementation 'org.apache.commons:commons-csv:1.10.0'
+
+    // Development
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+repositories {
+    mavenCentral()
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}

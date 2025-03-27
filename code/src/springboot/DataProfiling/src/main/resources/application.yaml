@@ -1,0 +1,17 @@
+
+server:
+  port: 9090
+  servlet:
+    context-path: /byteme
+
+app:
+  use-mock-services: true
+
+python:
+  script:
+    path: scripts/compliance_ai.py
+
+  api:
+    url: "http://localhost:5000"
+    analyze-path: "/analyze"
+    timeout: 5000
